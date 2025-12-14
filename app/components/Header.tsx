@@ -55,8 +55,8 @@ export function Header({ title }: { title?: string }) {
             />
           </a>
           {/* Greeting on the right side */}
-          <div className="ml-auto text-right pr-2">
-            <span className="inline-block text-sm font-semibold">
+          <div className="header-greeting">
+            <span>
               {getGreeting()}{displayName ? `, ${displayName}` : ""}
             </span>
           </div>

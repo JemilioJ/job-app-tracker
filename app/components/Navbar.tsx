@@ -4,6 +4,7 @@ import {
   HomeIcon,
   DocumentPlusIcon,
   Squares2X2Icon,
+  UserCircleIcon,
 } from "@heroicons/react/24/solid";
 import "./navbar.css";
 
@@ -41,6 +42,7 @@ export function Navbar() {
               to="/profile"
               className="flex items-center gap-2 font-semibold text-lg text-white hover:underline"
             >
+              <UserCircleIcon className="w-5 h-5" />
               Profile
             </Link>
           )}
