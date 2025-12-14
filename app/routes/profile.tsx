@@ -183,7 +183,7 @@ export default function Profile() {
 
   const handleDeleteResume = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    if (!confirm("Are you sure you want to delete this resume?")) return;
+    if (!confirm("Are you sure you want to delete this document?")) return;
 
     const updated = resumes.filter(r => r.id !== id);
     setResumes(updated);
@@ -308,10 +308,10 @@ export default function Profile() {
                     className="text-3xl font-bold text-slate-900 border-b-2 border-blue-500 focus:outline-none bg-transparent"
                     autoFocus
                   />
-                  <button onClick={saveName} className="text-green-600 hover:bg-green-50 p-1 rounded">
+                  <button onClick={saveName} className="text-green-600 hover:bg-green-50 p-1 rounded cursor-pointer">
                     <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d={mdiCheck} /></svg>
                   </button>
-                  <button onClick={cancelName} className="text-red-600 hover:bg-red-50 p-1 rounded">
+                  <button onClick={cancelName} className="text-red-600 hover:bg-red-50 p-1 rounded cursor-pointer">
                     <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d={mdiClose} /></svg>
                   </button>
                 </div>
@@ -322,7 +322,7 @@ export default function Profile() {
                   </h1>
                   <button 
                     onClick={startEditingName}
-                    className="text-slate-400 hover:text-blue-600 transition-colors"
+                    className="text-slate-400 hover:text-blue-600 transition-colors cursor-pointer"
                     title="Edit display name"
                   >
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d={mdiPencilOutline} /></svg>
@@ -352,7 +352,7 @@ export default function Profile() {
                     <div className="flex items-center gap-2">
                        <button
                         onClick={handleDownloadDoc}
-                        className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
+                        className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer"
                         title="Download as Word Doc"
                       >
                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d={mdiDownload} /></svg>
@@ -360,7 +360,7 @@ export default function Profile() {
                       </button>
                       <button
                         onClick={() => setIsEditing(true)}
-                        className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors"
+                        className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer"
                       >
                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d={mdiPencilOutline} /></svg>
                         Edit
@@ -370,14 +370,14 @@ export default function Profile() {
                     <div className="flex items-center gap-2">
                       <button
                         onClick={handleCancelResume}
-                        className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-colors"
+                        className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer"
                       >
                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d={mdiClose} /></svg>
                         Cancel
                       </button>
                       <button
                         onClick={handleSaveResume}
-                        className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 shadow-sm transition-colors"
+                        className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 shadow-sm transition-colors cursor-pointer"
                       >
                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d={mdiContentSaveOutline} /></svg>
                         Save
@@ -410,7 +410,7 @@ export default function Profile() {
                           <p>This resume is empty.</p>
                           <button 
                             onClick={() => setIsEditing(true)}
-                            className="mt-2 text-blue-600 hover:underline"
+                            className="mt-2 text-blue-600 hover:underline cursor-pointer"
                           >
                             Click to add content
                           </button>
@@ -423,7 +423,7 @@ export default function Profile() {
                     <p>Select a resume from the sidebar or create a new one.</p>
                     <button 
                       onClick={handleCreateResume}
-                      className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                      className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 cursor-pointer"
                     >
                       Create New Resume
                     </button>
@@ -437,10 +437,10 @@ export default function Profile() {
           <div className="lg:col-span-2 space-y-4">
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-semibold text-slate-800">Saved Resumes</h3>
+                <h3 className="font-semibold text-slate-800">Saved Documents</h3>
                 <button 
                   onClick={handleCreateResume}
-                  className="text-blue-600 hover:bg-blue-50 p-1 rounded-full"
+                  className="text-blue-600 hover:bg-blue-50 p-1 rounded-full cursor-pointer"
                   title="Create new resume"
                 >
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d={mdiPlus} /></svg>
@@ -504,28 +504,28 @@ export default function Profile() {
                               <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                                 <button
                                   onClick={(e) => handleDuplicateResume(resume.id, e)}
-                                  className="p-1 text-gray-400 hover:text-blue-600 hover:bg-white rounded"
+                                  className="p-1 text-gray-400 hover:text-blue-600 hover:bg-white rounded cursor-pointer"
                                   title="Duplicate"
                                 >
                                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d={mdiContentCopy} /></svg>
                                 </button>
                                 <button
                                   onClick={(e) => handleChangeCategory(resume.id, resume.category, e)}
-                                  className="p-1 text-gray-400 hover:text-orange-600 hover:bg-white rounded"
+                                  className="p-1 text-gray-400 hover:text-orange-600 hover:bg-white rounded cursor-pointer"
                                   title="Move to Category"
                                 >
                                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d={mdiFolderMoveOutline} /></svg>
                                 </button>
                                 <button
                                   onClick={(e) => handleRenameResume(resume.id, resume.name, e)}
-                                  className="p-1 text-gray-400 hover:text-blue-600 hover:bg-white rounded"
+                                  className="p-1 text-gray-400 hover:text-blue-600 hover:bg-white rounded cursor-pointer"
                                   title="Rename"
                                 >
                                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d={mdiRenameBox} /></svg>
                                 </button>
                                 <button
                                   onClick={(e) => handleDeleteResume(resume.id, e)}
-                                  className="p-1 text-gray-400 hover:text-red-600 hover:bg-white rounded"
+                                  className="p-1 text-gray-400 hover:text-red-600 hover:bg-white rounded cursor-pointer"
                                   title="Delete"
                                 >
                                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d={mdiTrashCanOutline} /></svg>
