@@ -8,7 +8,7 @@ import Lottie from "lottie-react";
 import confettiAnimation from "../../public/assets/Confetti.json";
 
 // Set to false to use localStorage-only mode for development.
-const USE_SERVER = true;
+const USE_SERVER = false;
 
 export default function JobForm() {
   const { getToken } = useAuth();

@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 // Development feature flag: set to true to use Netlify functions / DB, false to use localStorage-only.
-const USE_SERVER = true;
+const USE_SERVER = false;
 
 export type Job = {
   id: string;

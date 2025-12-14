@@ -14,5 +14,7 @@ export default [
     // sign‐in/up
     route("sign-in/*", "routes/sign-in.tsx"),
     route("sign-up/*", "routes/sign-up.tsx"),
+    // profile route
+    route("profile", "routes/profile.tsx"),
   ]),
 ] satisfies RouteConfig;

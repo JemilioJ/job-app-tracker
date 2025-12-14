@@ -26,7 +26,6 @@ export function Navbar() {
   return (
     <nav className="w-full bg-blue-600 text-white app-navbar">
       <div className="container mx-auto flex items-center justify-between p-4">
-
         {/* LEFT */}
         <div className="flex items-center gap-6">
           <Link
@@ -36,6 +35,15 @@ export function Navbar() {
             <HomeIcon className="w-5 h-5" />
             Home
           </Link>
+          {/* Only show Profile when signed in */}
+          {isSignedIn && (
+            <Link
+              to="/profile"
+              className="flex items-center gap-2 font-semibold text-lg text-white hover:underline"
+            >
+              Profile
+            </Link>
+          )}
         </div>
 
         {/* RIGHT */}

@@ -1,11 +1,12 @@
 "use client";
 
+// Local-only mode (view/edit synced with local store)
+const USE_SERVER = false;
+
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams, Link } from "react-router";
 import { useJobs } from "../lib/jobStore";
 import "./job-view.css";
-
-const USE_SERVER = false;
 
 export default function JobView() {
   const { id } = useParams() as { id: string };
