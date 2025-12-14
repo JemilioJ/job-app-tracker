@@ -1,7 +1,23 @@
 import React, { useEffect, useState } from "react";
-import ReactQuill from "react-quill";
+import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./ResumeEditor.css";
+
+// Register fonts
+const Font = Quill.import("formats/font");
+Font.whitelist = [
+  "arial",
+  "comic-sans",
+  "courier-new",
+  "georgia",
+  "helvetica",
+  "lucida",
+  "roboto",
+  "times-new-roman",
+  "trebuchet",
+  "verdana"
+];
+Quill.register(Font, true);
 
 interface ResumeEditorProps {
   value: string;
@@ -24,7 +40,7 @@ export default function ResumeEditor({ value, onChange, placeholder }: ResumeEdi
   const modules = {
     toolbar: [
       [{ header: [1, 2, 3, false] }],
-      [{ font: [] }],
+      [{ font: Font.whitelist }],
       ["bold", "italic", "underline", "strike"],
       [{ color: [] }, { background: [] }],
       [{ list: "ordered" }, { list: "bullet" }],
