@@ -89,6 +89,7 @@
   /* Word Doc simulation */
   width: 10.25in; /* Increased width */
   min-height: 11in; /* Standard US Letter height */
+  height: auto !important; /* Fix: Allow height to grow beyond min-height */
   margin: 2rem auto; /* Center horizontally with vertical spacing */
   padding: 0.5in; /* 0.5" margins */
   background-color: white;

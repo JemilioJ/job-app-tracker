@@ -402,7 +402,7 @@ export default function Profile() {
                       {resumeContent ? (
                         <div 
                           dangerouslySetInnerHTML={{ __html: resumeContent }} 
-                          className="bg-white border border-gray-200 shadow-sm min-h-[11in] w-[9.5in] p-[0.5in] text-slate-900 mx-auto h-auto"
+                          className="bg-white border border-gray-200 shadow-sm min-h-[11in] w-[9.5in] p-[0.5in] text-slate-900 mx-auto h-fit"
                           style={{ lineHeight: 1.6 }}
                         />
                       ) : (

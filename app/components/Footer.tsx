@@ -14,7 +14,6 @@ export function Footer() {
               Streamline your job search and stay organized with our application
               tracking system.
             </p>
-            <p>Built by Jorge, Marcus, Caitlin, and Ava (CS-5784 Team 6).</p>
           </div>
 
           <div className="footer-section">
